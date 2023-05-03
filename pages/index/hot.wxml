@@ -1,0 +1,38 @@
+<!--pages/index/hot.wxml-->
+<!-- 热租榜 -->
+<view>
+  <view class="cu-form-group margin-top">
+    <view class="title">热租榜</view>
+    <view class="text-gray">全部榜单<text class="cuIcon-right"></text></view>
+  </view>
+  <view class="bg-white padding-lr-xs">
+    <view class="flex hot-item radius margin-bottom-xs bg-white" wx:for="{{3}}">
+      <view class="flex-sub padding-sm margin-xs radius bg-img" style="background-image: url('https://upload-images.jianshu.io/upload_images/4697920-5a559d389ef75773.png');height: 260rpx;"></view>
+      <view class="flex-twice padding-sm margin-xs radius">
+        <view class="hot-item-title">
+          <text class="text-lg text-black">48V24Ah新国标折叠代驾车 ，全国发货</text>
+        </view>
+        <view class="hot-item-tags margin-tb-sm">
+          <view class="cu-tag round bg-blue">包邮</view>
+          <view class="cu-tag round bg-red">活动</view>
+        </view>
+        <view class="hot-item-sale">
+          <text class="text-red text-price text-lg text-bold">120.21/月</text>
+          <text class="text-grey margin-lr">已成交2906</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 三列宫格 -->
+<view class="cu-form-group bg-white margin-top">
+    <view class="title">电动车</view>
+    <view class="text-gray">查看更多<text class="cuIcon-right"></text></view>
+  </view>
+<view class="grid col-3 bg-white">
+  <view class="padding-xs margin-bottom-sm" wx:for="{{6}}">
+    <view class="bg-img padding-bottom-xl" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10007.jpg');height: 220rpx;"></view>
+    <view class="grid-title">48V24Ah新国标折叠代驾车，全国发货货货货货货货货货</view>
+    <view><text class="text-price text-red text-bold text-lg">13.33/天</text></view>
+  </view>
+</view>

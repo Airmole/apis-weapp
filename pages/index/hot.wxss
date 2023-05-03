@@ -1,0 +1,9 @@
+/* pages/index/hot.wxss */
+.hot-item {
+  border: 1px solid #ccc;
+}
+
+.grid-title {
+  height: 80rpx;
+  overflow: hidden;
+}

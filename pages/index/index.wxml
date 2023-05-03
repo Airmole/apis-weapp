@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<!-- 搜索栏 -->
+<view class="cu-bar bg-black search">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="搜一搜发现更多好物" confirm-type="search"></input>
+  </view>
+</view>
+<!-- 轮播 -->
+<swiper class="screen-swiper square-dot swiper" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" indicator-active-color="#0281FF">
+  <swiper-item>
+    <view class="cu-list grid col-5 text-center" style="height: 100%;">
+      <view class="cu-item swiper-item" wx:for="{{10}}" wx:key>
+        <image class="swiper-item-image" src="https://upload-images.jianshu.io/upload_images/4697920-5a559d389ef75773.png" mode="widthFix" />
+        <text>电动车</text>
+      </view>
+    </view>
+  </swiper-item>
+</swiper>
+<!-- 热门推荐 -->
+<view>
+  <view class="cu-bar bg-white margin-rop">
+    <view class="action">
+      <text class="text-xl text-bold">热门推荐</text>
+    </view>
+  </view>
+  <view class="flex bg-white" style="overflow-x: scroll;">
+    <navigator url="../goods/detail?id={{item.id}}" class="hot-item margin-xs margin-lr" wx:for="{{hots.data}}">
+      <view class="hot-item-img">
+        <image style="height: 300rpx; width: 100%;" src="{{item.image[0]}}" mode="widthFix" />
+      </view>
+      <view class="hot-item-title margin-lr">
+        <text class="text-cut">{{item.name}}</text>
+      </view>
+      <view class="hot-item-price margin-lr">
+        <text class="text-price text-red text-lg">{{item.sale_price_text}}元/月起</text>
+      </view>
+    </navigator>
+  </view>
+</view>
+<!-- 商品列表 -->
+<view class="flex justfy-center">
+  <view class="flex flex-wrap justify-between goods-list margin-tb-xl padding-lr">
+    <navigator url="../goods/detail?id={{item.id}}" class="goods-list-item bg-white margin-bottom shadow radius" wx:for="{{goods.data}}">
+      <view class="goods-item-img padding-xs">
+        <view class="bg-img radius" style="background-image: url('{{item.image[0]}}');height: 390rpx;"></view>
+      </view>
+      <view class="goods-item-title padding-lr-xs text-cut">
+        <text class="text-df">{{item.name}}</text>
+      </view>
+      <view class="goods-item-tags padding-lr-xs">
+        <view class="cu-tag round bg-blue">包邮</view>
+        <view class="cu-tag round bg-red">活动</view>
+      </view>
+      <view class="goods-item-price padding-xs">
+        <text class="text-red text-price text-lg">{{item.sale_price_text}}/月</text>
+      </view>
+    </navigator>
+  </view>
+</view>

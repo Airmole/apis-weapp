@@ -1,0 +1,71 @@
+<!--pages/goods/detail.wxml-->
+<!-- 轮播图 -->
+<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{goods.image}}" wx:key>
+    <image src="{{item}}" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+<!-- 价格&标题 -->
+<view class="text-xxl padding">
+  <text class="text-price text-red">{{goods.sale_price_text}}</text>元/每天起
+  <text class="text-black text-bold">\r\n{{goods.name}}</text>
+</view>
+<!-- 详细介绍 -->
+<view class="solid-top margin bg-white padding radius">
+  <text>{{goods.desc}}</text>
+</view>
+<!-- 操作栏 -->
+<view class="cu-bar bg-white tabbar border shop foot">
+  <button class="action" open-type="contact">
+    <view class="cuIcon-service text-green"></view>客服
+  </button>
+  <view class="bg-red submit" bindtap="showModal" data-target="ChooseModal">立即订购</view>
+</view>
+<!-- 模态框 -->
+<view class="cu-modal bottom-modal {{modalName=='ChooseModal'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog" catchtap>
+    <view class="cu-bar bg-white">
+      <view class="action text-blue" bindtap="hideModal">取消</view>
+      <view class="action text-green" bindtap="hideModal">确定</view>
+    </view>
+    <view class="padding-sm">
+      <!-- <view class="cu-form-group">
+        <view class="title">数量</view>
+        <input placeholder="下单数量" value="{{amount}}" bindinput="amountChanged"></input>
+      </view> -->
+      <view class="cu-form-group">
+        <view class="title">收货人</view>
+        <input placeholder="收货人姓名" value="{{buyer_name}}" bindinput="buyerNameChanged"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">联系电话</view>
+        <input placeholder="收货人联系电话" value="{{buyer_mobile}}" bindinput="buyerMobileChanged"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">收货地址</view>
+        <picker mode="region" bindchange="buyerRegionChange" value="{{buyer_region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{buyer_region[0]}}，{{buyer_region[1]}}，{{buyer_region[2]}}
+          </view>
+        </picker>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">详细地址</view>
+        <input placeholder="详细收货地址" value="{{buyer_address}}" bindinput="buyerAddressChanged"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">身份证号</view>
+        <input placeholder="身份证号码" value="{{buyer_idcard}}" bindinput="buyerIdcardChanged"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">备注信息</view>
+        <input placeholder="下单备注信息" value="{{buyer_message}}" bindinput="buyerMessageChanged"></input>
+      </view>
+      <view class="grid col-1 padding-sm">
+        <view class="margin-tb-sm text-center">
+          <button bindtap="submitOrder" class="cu-btn round bg-green shadow">确认</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

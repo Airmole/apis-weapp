@@ -1,0 +1,104 @@
+<!--pages/index/catagory.wxml-->
+<view class="VerticalBox">
+  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:(100vh)">
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+    <view class="padding-top padding-lr" wx:for="{{list}}" wx:key id="main-{{index}}">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='cuIcon-title text-green'></text> {{item.name}} </view>
+      </view>
+      <!-- 非供应体系商品分类 -->
+      <view class="cu-list menu-avatar" wx:if="{{index!=5}}">
+        <view class="cu-item">
+          <view class="cu-avatar lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content">
+            <view class="text-grey">外卖车</view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">描述信息...描述信息...描述信息...</text>
+            </view>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="cu-avatar lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content">
+            <view class="text-grey">代驾车</view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">描述信息...描述信息...描述信息....</text>
+            </view>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="cu-avatar lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content">
+            <view class="text-grey">民用车</view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">描述信息...描述信息...描述信息....</text>
+            </view>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="cu-avatar lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content">
+            <view class="text-grey">其他种类车</view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">描述信息...描述信息...描述信息....</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 供应体系商品分类 -->
+      <view class="cu-list menu-avatar" wx:if="{{index==5}}">
+        <view class="cu-item">
+          <view class="cu-avatar lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content">
+            <view class="text-grey">零件厂</view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">描述信息...描述信息...描述信息...</text>
+            </view>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="cu-avatar lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content">
+            <view class="text-grey">电池</view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">描述信息...描述信息...描述信息...</text>
+            </view>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="cu-avatar lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content">
+            <view class="text-grey">电机</view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">描述信息...描述信息...描述信息...</text>
+            </view>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="cu-avatar lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content">
+            <view class="text-grey">门店</view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">描述信息...描述信息...描述信息...</text>
+            </view>
+          </view>
+        </view>
+        <view class="cu-item">
+          <view class="cu-avatar lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+          <view class="content">
+            <view class="text-grey">电动车厂</view>
+            <view class="text-gray text-sm flex">
+              <text class="text-cut">描述信息...描述信息...描述信息...</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+</view>

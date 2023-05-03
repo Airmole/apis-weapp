@@ -1,0 +1,39 @@
+/**index.wxss**/
+.swiper {
+  height: 400rpx;
+}
+.swiper-item-image {
+  width: 100%;
+  padding: 0rpx 24rpx;
+}
+
+.hot-item {
+  width: 260rpx;
+  height: 380rpx;
+  margin-bottom: 30rpx;
+  border: 1px solid #ccc;
+  border-radius: 20rpx;
+}
+
+.hot-item-img {
+  width: 100%;
+  height: 300rpx;
+  overflow: hidden;
+}
+
+.hot-item-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.goods-list-item {
+  width: 48%;
+  min-width: 320rpx;
+  height: 600rpx;
+  border: 1px solid #ccc;
+  margin: 10rpx 6rpx;
+}
+
+.goods-item-img {
+  height: 400rpx;
+}
