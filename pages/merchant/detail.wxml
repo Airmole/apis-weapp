@@ -1,0 +1,33 @@
+<!--pages/merchant/detail.wxml-->
+
+<view class="margin padding text-center bg-white radius">
+  <image src="{{merchant.logo}}" mode="widthFix"/>
+  <text class="text-xxl">{{merchant.name}}</text>
+  <text class="text-xl">\r\n {{merchant.province}}{{merchant.city}}{{merchant.county}}{{merchant.address}}</text>
+</view>
+<!-- 介绍 -->
+<view class="bg-white padding margin radius">
+  {{merchant.desc}}
+</view>
+<!-- 商品 -->
+
+<!-- 商品列表 -->
+<view class="flex justfy-center">
+  <view class="flex flex-wrap justify-between goods-list margin-tb-xl padding-lr">
+    <navigator url="../goods/detail?id={{item.id}}" class="goods-list-item bg-white margin-bottom shadow radius" wx:for="{{merchant.goods}}">
+      <view class="goods-item-img padding-xs">
+        <view class="bg-img radius" style="background-image: url('{{item.image[0]}}');height: 390rpx;"></view>
+      </view>
+      <view class="goods-item-title padding-lr-xs text-cut">
+        <text class="text-df">{{item.name}}</text>
+      </view>
+      <view class="goods-item-tags padding-lr-xs">
+        <view class="cu-tag round bg-blue">包邮</view>
+        <view class="cu-tag round bg-red">活动</view>
+      </view>
+      <view class="goods-item-price padding-xs">
+        <text class="text-red text-price text-lg">{{item.sale_price_text}}/月</text>
+      </view>
+    </navigator>
+  </view>
+</view>

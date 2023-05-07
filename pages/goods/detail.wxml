@@ -10,6 +10,15 @@
   <text class="text-price text-red">{{goods.sale_price_text}}</text>元/每天起
   <text class="text-black text-bold">\r\n{{goods.name}}</text>
 </view>
+<!-- 商家店铺 -->
+<view class="cu-list menu margin bg-white radius">
+  <view class="cu-item arrow">
+      <navigator class="content" hover-class="none" url="../merchant/detail?id={{goods.merchant.id}}">
+        <text class="cuIcon-discoverfill text-orange"></text>
+        <text class="text-grey">商家：{{goods.merchant.name}}</text>
+      </navigator>
+    </view>
+</view>
 <!-- 详细介绍 -->
 <view class="solid-top margin bg-white padding radius">
   <text>{{goods.desc}}</text>

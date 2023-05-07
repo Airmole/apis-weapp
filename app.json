@@ -4,7 +4,8 @@
     "pages/index/catagory",
     "pages/index/ucenter",
     "pages/index/hot",
-    "pages/goods/detail"
+    "pages/goods/detail",
+    "pages/merchant/detail"
   ],
   "tabBar": {
     "list": [{
